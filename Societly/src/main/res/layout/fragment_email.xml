@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@drawable/img_background"
+        android:scaleType="centerCrop"
+        android:contentDescription="">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_toolbar_light" />
+
+        <mobi.lab.societly.ui.TypefaceEditText
+            style="@style/EditText.Email"
+            android:id="@+id/edittext_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_email_edittext"
+            android:layout_marginTop="@dimen/padding_email_top"
+            android:layout_marginLeft="@dimen/layout_edge_padding"
+            android:layout_marginRight="@dimen/layout_edge_padding" />
+
+        <mobi.lab.societly.ui.TypefaceButton
+            style="@style/Button.White"
+            android:id="@+id/btn_submit_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_button"
+            android:layout_marginLeft="@dimen/layout_double_edge_padding"
+            android:layout_marginRight="@dimen/layout_double_edge_padding"
+            android:layout_marginTop="@dimen/layout_edge_padding"
+            android:text="@string/label_continue" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextSmall.Light.Secondary"
+            android:id="@+id/text_email_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_skip_email_topbottom"
+            android:paddingBottom="@dimen/padding_skip_email_topbottom"
+            android:layout_marginTop="@dimen/margin_skip_email_top"
+            android:layout_marginLeft="@dimen/layout_edge_padding"
+            android:layout_marginRight="@dimen/layout_edge_padding"
+            android:gravity="center_horizontal|bottom"
+            android:text="@string/text_skip_email" />
+
+    </LinearLayout>
+
+</FrameLayout>
+

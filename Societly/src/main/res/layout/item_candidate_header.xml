@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingLeft="@dimen/padding_result_item_edge"
+    android:paddingStart="@dimen/padding_result_item_edge"
+    android:paddingRight="@dimen/padding_result_item_edge"
+    android:paddingEnd="@dimen/padding_result_item_edge"
+    android:orientation="horizontal">
+
+    <mobi.lab.societly.ui.TypefaceTextView
+        style="@style/TextView.Result.Primary"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:paddingTop="@dimen/padding_candidate_overview_card_you_top"
+        android:gravity="center_horizontal"
+        android:text="@string/text_candidate_overview_you" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_candidate_overview_card_top"
+        android:paddingBottom="@dimen/padding_candidate_overview_card_bottom">
+
+        <ImageView
+            android:id="@+id/img_rounded"
+            android:layout_width="@dimen/height_result_avatar"
+            android:layout_height="@dimen/height_result_avatar"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/padding_candidate_overview_avatar_bottom"
+            android:scaleType="centerCrop" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextView.Result.Primary"
+            android:id="@+id/text_candidate_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_rounded"
+            android:gravity="center" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextView.Result.Secondary"
+            android:id="@+id/text_candidate_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_candidate_name"
+            android:gravity="center" />
+
+    </RelativeLayout>
+</LinearLayout>

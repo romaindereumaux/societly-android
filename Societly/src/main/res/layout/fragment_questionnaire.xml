@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@drawable/img_background"
+        android:scaleType="centerCrop"
+        android:contentDescription="">
+    </ImageView>
+
+    <com.lorentzos.flingswipe.SwipeFlingAdapterView
+        android:id="@+id/container_questions"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rotation_degrees="@integer/swipe_card_rotation_degrees"
+        app:min_adapter_stack="1"
+        app:max_visible="@integer/max_visible_swipe_cards"
+        tools:context=".MainActivity" />
+
+    <include layout="@layout/include_toolbar_light" />
+
+</FrameLayout>
+
+

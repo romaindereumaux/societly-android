@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Spinner.ResultLevel" parent="Spinner.ResultLevel.Base">
+        <item name="android:popupElevation">0dp</item>
+    </style>
+</resources>

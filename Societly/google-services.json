@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "663016417301",
+    "project_id": "societly-147707"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663016417301:android:5581b3d335cbcb9f",
+        "android_client_info": {
+          "package_name": "ee.valijakompass.societly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663016417301-djvv6kb8ju5pqfgbrc8a2o6g4a2fjcuf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ee.valijakompass.societly",
+            "certificate_hash": "6B300729E8851123E924CBFF5AA11BCABBE690E8"
+          }
+        },
+        {
+          "client_id": "663016417301-qac2598soruovmu4ev5ar0rngnvp1mqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ee.valijakompass.societly",
+            "certificate_hash": "0F8478AAA250792BAF52DB261C40057330057147"
+          }
+        },
+        {
+          "client_id": "663016417301-afi67dih33oc83uvcog3nbv9ofrfc4of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSjlbk_3NS3c5JJJ0HTugcTA9_xHCN9d0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

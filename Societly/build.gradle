@@ -1,0 +1,169 @@
+buildscript {
+    repositories {
+        jcenter()
+        add project.repositories.ivy
+    }
+
+    dependencies {
+        classpath 'mobi:tabasco-gradle:1.0.46'
+        classpath 'me.tatarka:gradle-retrolambda:3.3.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'ivy-publish'
+apply plugin: 'tabasco'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.google.gms.google-services'
+
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    signingConfigs {
+        defaultSigning {
+            storeFile file('signing/signing.keystore')
+            storePassword 'IroALBiPOUaApOYAsJADpGcHmjeqoReGUTPlYAdrfxDthcbYmC'
+            keyAlias 'Societly'
+            keyPassword 'GzVZxbMqBddgqLzoVEDzdlkEQpNLtOkprhxukdWltLfZwzZDhJ'
+        }
+        debugSigning {
+            storeFile file('signing/debug.keystore')
+            storePassword 'wibcrVrTGcRIYgkigIQomCTtYkUAXTQUJZoYvMPzllLPzpYFCS'
+            keyAlias 'Societly'
+            keyPassword 'FhvnSESmGaupmtVnWmlLLZVqXlQbnqYlDwpxVFWOPNSqrieMAZ'
+        }
+    }
+    defaultConfig {
+        applicationId "ee.valijakompass.societly"
+        minSdkVersion 15
+        targetSdkVersion 24
+        signingConfig signingConfigs.defaultSigning
+        versionName project.ext.versionName
+        versionCode project.ext.versionCode
+
+        println 'CONF: versionName is set to: ' + versionName
+        println 'CONF: versionCode is set to: ' + versionCode
+        println 'CONF: is a release build: ' + project.ext.isRelease
+    }
+    buildTypes {
+        release {
+            // Proguard is enabled by default
+            // (Think about the logging lib before turning this off)
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+
+        debug {
+            signingConfig signingConfigs.debugSigning
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError true
+    }
+}
+
+project.ext.apkFiles = fileTree('build/outputs/apk') {
+    include '*.apk'
+}
+
+project.ext.proguardFiles = fileTree('build/outputs/mapping/release') {
+    include 'mapping.txt'
+}
+
+tabasco {
+    id = 'mobi-solutions'
+    secret = '3da541559918a808c2402bba5012f6c60b27661c'
+    repoPattern = "https://nexus.lab.mobi/content/repositories/mobi-gradle/$project.group/$project.name/[revision]/[filename]-[revision].[ext]"
+    files = apkFiles
+    release = project.ext.isRelease
+    verbose = false
+}
+
+task(reg_artifacts) << {
+    apkFiles.each{ File file ->
+        IvyArtifact artifact = publishing.publications.ivy.artifact(file)
+        artifact.setName(file.getName().substring(0, file.getName().lastIndexOf('.')));
+        println "Added artifact " + artifact.name
+    }
+    proguardFiles.each{ File file ->
+        IvyArtifact artifact = publishing.publications.ivy.artifact(file)
+        artifact.setName(file.getName().substring(0, file.getName().lastIndexOf('.')));
+        println "Added artifact " + artifact.name
+    }
+}
+
+assemble.doLast {
+    tasks.reg_artifacts.execute()
+}
+
+publishing {
+    publications {
+        ivy(IvyPublication) {
+        }
+    }
+    repositories {
+        ivy {
+            credentials {
+                username project.nexusUser
+                password project.nexusPass
+            }
+            url "https://nexus.lab.mobi/content/repositories/mobi-gradle/"
+            ivyPattern "https://nexus.lab.mobi/content/repositories/mobi-gradle/[organisation]/[module](/[branch])/[revision]/ivy.xml"
+            artifactPattern "https://nexus.lab.mobi/content/repositories/mobi-gradle/[organisation]/[module](/[branch])/[revision]/[artifact].[ext]"
+        }
+    }
+}
+
+def GROUP_BUILD_TASKS = 'Build'
+task buildGreenhouseDebug(dependsOn: ['clean', 'build', 'publish', 'tabasco_publish'])
+buildGreenhouseDebug.group = GROUP_BUILD_TASKS
+buildGreenhouseDebug.description = "Build and publish the debug version with GreenhouseCI"
+
+task buildGreenhouseRelease(dependsOn: ['buildGreenhouseDebug'])
+buildGreenhouseRelease.group = GROUP_BUILD_TASKS
+buildGreenhouseRelease.description = "Build and publish the release version with GreenhouseCI"
+
+build.mustRunAfter clean
+publish.mustRunAfter build
+tabasco_publish.mustRunAfter publish
+
+dependencies {
+    retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:2.0.4'
+
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.3@aar') {
+        transitive = true
+    }
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+
+    compile 'com.google.android.gms:play-services-auth:9.0.0'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.android.support:percent:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:cardview-v7:24.0.0'
+    compile 'mobi:scrolls-lib:2.0.40', { transitive = false }
+    compile project(':Swipecards-library')
+    compile 'com.squareup:otto:1.3.8'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.google.code.gson:gson:2.7'
+
+    compile 'io.reactivex:rxandroid:1.2.1'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+
+}

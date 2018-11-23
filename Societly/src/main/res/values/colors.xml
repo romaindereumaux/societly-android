@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_dark_primary">#e6000440</color>
+    <color name="text_dark_secondary">#b1b1b1</color>
+    <color name="bg_yes">#77f3b5</color>
+    <color name="bg_no">#ff7777</color>
+    <color name="bg_neutral">#fff775</color>
+    <color name="bg_skip">#b1b1b1</color>
+    <color name="bg_default">#FFFFFFFF</color>
+    <color name="bg_answer_skipped">#d8d8d8</color>
+    <color name="text_light_primary">#FFFFFF</color>
+    <color name="text_light_secondary">#81ffffff</color>
+    <color name="bg_darkened">#9a000440</color>
+    <color name="bg_splash">#FF273360</color>
+    <color name="btn_white">#ffffff</color>
+    <color name="btn_white_pressed">#b3ffffff</color>
+    <color name="btn_blue">@color/color_primary</color>
+    <color name="btn_blue_pressed">#b3000440</color>
+    <color name="color_primary">#000440</color>
+    <color name="btn_toolbar_dark_pressed">#e6e6ec</color>
+    <color name="btn_toolbar_light_pressed">#1affffff</color>
+    <color name="bg_image_placeholder">#e6e6ec</color>
+</resources>

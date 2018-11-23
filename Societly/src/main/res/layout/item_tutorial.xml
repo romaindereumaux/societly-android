@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    style="@style/QuestionCard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/question_card"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_tutorial_content">
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/Tutorial"
+            android:id="@+id/text_tutorial_center"
+            android:layout_width="@dimen/width_tutorial_text"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/width_tutorial_text"
+            android:layout_centerInParent="true"
+            android:gravity="left|center_vertical"
+            android:text="@string/text_tutorial_center" />
+
+        <ImageView
+            android:id="@+id/tutorial_arrow_up"
+            android:layout_width="@dimen/tutorial_arrow_edge"
+            android:layout_height="@dimen/tutorial_arrow_edge"
+            android:layout_above="@id/text_tutorial_center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/padding_tutorial_arrow_topbottom"
+            android:src="@drawable/img_tutorial_arrow"
+            android:scaleType="center" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/Tutorial.Hint"
+            android:layout_height="@dimen/height_tutorial_hint"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="@id/tutorial_arrow_up"
+            android:gravity="center"
+            android:text="@string/hint_neutral" />
+
+        <ImageView
+            android:id="@+id/tutorial_arrow_down"
+            android:layout_width="@dimen/tutorial_arrow_edge"
+            android:layout_height="@dimen/tutorial_arrow_edge"
+            android:layout_below="@id/text_tutorial_center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/padding_tutorial_arrow_topbottom"
+            android:src="@drawable/img_tutorial_arrow"
+            android:rotation="180"
+            android:scaleType="center" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/Tutorial.Hint"
+            android:layout_height="@dimen/height_tutorial_hint"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text="@string/hint_skip" />
+
+        <mobi.lab.societly.ui.VerticalTextView
+            style="@style/Tutorial.Hint.Rotated"
+            android:id="@+id/text_tutorial_right"
+            android:layout_alignParentRight="true"
+            android:gravity="top"
+            android:text="@string/hint_yes" />
+
+        <mobi.lab.societly.ui.VerticalTextView
+            style="@style/Tutorial.Hint.Rotated"
+            android:id="@+id/text_tutorial_left"
+            android:layout_alignParentLeft="true"
+            android:gravity="bottom"
+            android:text="@string/hint_no" />
+
+        <ImageView
+            android:id="@+id/tutorial_arrow_left"
+            android:layout_width="@dimen/tutorial_arrow_edge"
+            android:layout_height="@dimen/tutorial_arrow_edge"
+            android:layout_toRightOf="@id/text_tutorial_left"
+            android:layout_toEndOf="@id/text_tutorial_left"
+            android:layout_below="@id/tutorial_arrow_up"
+            android:layout_above="@id/tutorial_arrow_down"
+            android:src="@drawable/img_tutorial_arrow"
+            android:rotation="-90"
+            android:scaleType="center" />
+
+        <ImageView
+            android:id="@+id/tutorial_arrow_right"
+            android:layout_width="@dimen/tutorial_arrow_edge"
+            android:layout_height="@dimen/tutorial_arrow_edge"
+            android:layout_toLeftOf="@id/text_tutorial_right"
+            android:layout_toStartOf="@id/text_tutorial_right"
+            android:layout_below="@id/tutorial_arrow_up"
+            android:layout_above="@id/tutorial_arrow_down"
+            android:src="@drawable/img_tutorial_arrow"
+            android:rotation="90"
+            android:scaleType="center" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

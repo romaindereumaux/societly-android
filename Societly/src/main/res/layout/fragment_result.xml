@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <android.support.v4.widget.ContentLoadingProgressBar
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:id="@android:id/progress"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerInParent="true" />
+
+    <include
+        layout="@layout/include_toolbar_dark"
+        android:id="@+id/include_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:visibility="gone"
+        android:id="@android:id/content"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/include_toolbar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <mobi.lab.societly.ui.TypefaceTextView
+                style="@style/TextView.Result.Divider.Top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_results_country" />
+
+            <mobi.lab.societly.ui.AdapterLinearLayout
+                android:id="@+id/list_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <mobi.lab.societly.ui.TypefaceTextView
+                android:id="@+id/divider_state"
+                style="@style/TextView.Result.Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_result_item_bottom"
+                android:text="@string/title_results_state" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spinner_state"
+                style="@style/Spinner.ResultLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <mobi.lab.societly.ui.AdapterLinearLayout
+                android:id="@+id/list_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <mobi.lab.societly.ui.TypefaceTextView
+                android:id="@+id/divider_district"
+                style="@style/TextView.Result.Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_result_item_bottom"
+                android:text="@string/title_results_district"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spinner_district"
+                style="@style/Spinner.ResultLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <mobi.lab.societly.ui.AdapterLinearLayout
+                android:id="@+id/list_district"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/layout_edge_padding"
+                android:layout_marginStart="@dimen/layout_edge_padding"
+                android:layout_marginRight="@dimen/layout_edge_padding"
+                android:layout_marginEnd="@dimen/layout_edge_padding"
+                android:paddingBottom="@dimen/padding_bottom_result_footer"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <mobi.lab.societly.ui.TypefaceTextView
+                    style="@style/TextSmall.Dark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/padding_result_footer_text"
+                    android:paddingBottom="@dimen/padding_result_footer_text"
+                    android:text="@string/text_reset_questionnaire" />
+
+                <mobi.lab.societly.ui.TypefaceButton
+                    style="@style/Button.Blue"
+                    android:id="@+id/btn_reset"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginLeft="@dimen/layout_edge_padding"
+                    android:layout_marginStart="@dimen/layout_edge_padding"
+                    android:layout_marginRight="@dimen/layout_edge_padding"
+                    android:layout_marginEnd="@dimen/layout_edge_padding"
+                    android:text="@string/label_reset" />
+
+                <mobi.lab.societly.ui.TypefaceButton
+                    style="@style/Button.Blue"
+                    android:id="@+id/btn_reset_hard"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginLeft="@dimen/layout_edge_padding"
+                    android:layout_marginStart="@dimen/layout_edge_padding"
+                    android:layout_marginRight="@dimen/layout_edge_padding"
+                    android:layout_marginEnd="@dimen/layout_edge_padding"
+                    android:visibility="gone"
+                    android:text="@string/label_reset_hard" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+
+
+
+

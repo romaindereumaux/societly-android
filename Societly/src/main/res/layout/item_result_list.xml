@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="@dimen/height_result_list_item"
+    android:layout_width="match_parent"
+    android:paddingLeft="@dimen/padding_result_item_edge"
+    android:paddingRight="@dimen/padding_result_item_edge"
+    android:paddingBottom="@dimen/padding_result_item_bottom"
+    android:paddingTop="@dimen/padding_result_item_bottom"
+    android:background="@drawable/bg_white_item">
+
+    <ImageView
+        android:id="@+id/img_rounded"
+        android:layout_width="@dimen/height_result_avatar"
+        android:layout_height="@dimen/height_result_avatar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="@dimen/padding_right_result_avatar"
+        android:layout_marginEnd="@dimen/padding_right_result_avatar"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/img_rounded"
+        android:layout_toEndOf="@id/img_rounded"
+        android:orientation="vertical" >
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextView.Result.Primary"
+            android:id="@+id/text_result_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextView.Result.Secondary"
+            android:id="@+id/text_result_secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_result_item_progress">
+
+            <mobi.lab.societly.ui.TypefaceTextView
+                style="@style/TextView.Result.Secondary.Dark"
+                android:id="@+id/text_result_compatibility"
+                android:layout_width="@dimen/width_result_compatibility_percent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:gravity="end|center_vertical" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/progress_result_compatibility"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/text_result_compatibility"
+                android:layout_toStartOf="@id/text_result_compatibility"
+                android:progressDrawable="@drawable/progress_blue"
+                android:paddingTop="@dimen/padding_progress_topbottom"
+                android:paddingBottom="@dimen/padding_progress_topbottom"
+                android:paddingRight="@dimen/padding_progress_right"
+                android:max="100" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

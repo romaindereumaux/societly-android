@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Check out CardView docs. Essentially extra padding is added on versions before Lollipop-->
+    <dimen name="padding_question_outer_leftright">24dp</dimen>
+    <dimen name="padding_question_outer_bottom">20dp</dimen>
+    <!--height_toolbar + 20dp-->
+    <dimen name="padding_question_outer_top">76dp</dimen>
+</resources>

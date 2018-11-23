@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_question_card">26sp</dimen>
+    <dimen name="text_question_card_spacing_extra">0sp</dimen>
+    <dimen name="width_tutorial_text">140dp</dimen>
+</resources>

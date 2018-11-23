@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_toolbar"
+    android:orientation="horizontal"
+    android:background="@android:color/transparent">
+
+    <ImageButton
+        style="@style/ToolbarButton.Previous"
+        android:id="@+id/btn_toolbar_previous"
+        android:layout_weight="0"
+        android:contentDescription="@string/content_desc_previous" />
+
+    <mobi.lab.societly.ui.TypefaceTextView
+        style="@style/TextLarge.Light"
+        android:id="@+id/text_toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:lineSpacingExtra="0dp"
+        android:gravity="center"
+        android:layout_weight="1" />
+
+    <ImageButton
+        style="@style/ToolbarButton.Next"
+        android:id="@+id/btn_toolbar_next"
+        android:layout_weight="0"
+        android:contentDescription="@string/content_desc_next" />
+
+</LinearLayout>

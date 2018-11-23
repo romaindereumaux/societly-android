@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="swipe_card_rotation_degrees">5</integer>
+    <integer name="max_visible_swipe_cards">2</integer>
+</resources>

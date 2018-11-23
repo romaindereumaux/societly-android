@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@drawable/img_background"
+        android:scaleType="centerCrop"
+        android:contentDescription="">
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/landing_top_padding" >
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextLarge.Light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_edge_padding"
+            android:layout_marginRight="@dimen/layout_edge_padding"
+            android:gravity="center"
+            android:text="@string/text_landing_page" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextSmall.Light"
+            android:id="@+id/text_landing_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/layout_edge_padding"
+            android:layout_marginRight="@dimen/layout_edge_padding"
+            android:gravity="center"
+            android:text="@string/text_landing_page_small" />
+
+        <mobi.lab.societly.ui.TypefaceButton
+            style="@style/Button.White.Small"
+            android:id="@+id/btn_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_button"
+            android:layout_marginLeft="@dimen/layout_double_edge_padding"
+            android:layout_marginRight="@dimen/layout_double_edge_padding"
+            android:layout_marginBottom="@dimen/margin_default_2"
+            android:layout_marginTop="@dimen/margin_default_2"
+            android:text="@string/label_btn_sign_up" />
+
+        <mobi.lab.societly.ui.TypefaceButton
+            style="@style/Button.White.Small"
+            android:id="@+id/btn_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_button"
+            android:layout_marginLeft="@dimen/layout_double_edge_padding"
+            android:layout_marginRight="@dimen/layout_double_edge_padding"
+            android:text="@string/label_btn_sign_in" />
+
+        <mobi.lab.societly.ui.TypefaceTextView
+            style="@style/TextSmall"
+            android:id="@+id/btn_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_edge_padding"
+            android:layout_marginBottom="@dimen/layout_edge_padding"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/margin_default"
+            android:textColor="@android:color/white"
+            android:alpha="0.5"
+            android:text="@string/label_button_skip" />
+
+    </LinearLayout>
+
+</FrameLayout>
+
+

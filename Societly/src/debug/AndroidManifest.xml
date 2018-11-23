@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="mobi.lab.societly" >
+
+	<uses-permission android:name="android.permission.INTERNET" />
+
+    <application android:name=".SocietlyApplication">
+	    <activity android:name="ee.mobi.scrolls.activity.LogPostActivity" android:process=".LogPostProcess" />
+	    <activity android:name="ee.mobi.scrolls.activity.LogListActivity" />
+	    <activity android:name="ee.mobi.scrolls.activity.LogReaderActivity" />
+    </application>
+</manifest>

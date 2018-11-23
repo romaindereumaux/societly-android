@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="@dimen/layout_edge_padding"
+    android:layout_marginStart="@dimen/layout_edge_padding"
+    android:layout_marginRight="@dimen/layout_edge_padding"
+    android:layout_marginEnd="@dimen/layout_edge_padding"
+    android:paddingBottom="@dimen/padding_bottom_result_footer"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <mobi.lab.societly.ui.TypefaceTextView
+        style="@style/TextSmall.Dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/padding_result_footer_text"
+        android:paddingBottom="@dimen/padding_result_footer_text"
+        android:text="@string/text_reset_questionnaire" />
+
+    <mobi.lab.societly.ui.TypefaceButton
+        style="@style/Button.Blue"
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_button"
+        android:layout_marginLeft="@dimen/layout_edge_padding"
+        android:layout_marginStart="@dimen/layout_edge_padding"
+        android:layout_marginRight="@dimen/layout_edge_padding"
+        android:layout_marginEnd="@dimen/layout_edge_padding"
+        android:text="@string/label_reset" />
+
+    <mobi.lab.societly.ui.TypefaceButton
+        style="@style/Button.Blue"
+        android:id="@+id/btn_reset_hard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_button"
+        android:layout_marginLeft="@dimen/layout_edge_padding"
+        android:layout_marginStart="@dimen/layout_edge_padding"
+        android:layout_marginRight="@dimen/layout_edge_padding"
+        android:layout_marginEnd="@dimen/layout_edge_padding"
+        android:visibility="gone"
+        android:text="@string/label_reset_hard" />
+
+</LinearLayout>
